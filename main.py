@@ -422,3 +422,26 @@ def analyze_alteryx_ecosystem_merged(
         else: print(f"No detailed usage found for the specified target fields for Output B {'(considering SoT if active)' if sot_is_active else ''}.")
     else: print("\nOutput B generation skipped as no target fields were specified or loaded.")
     print("\nAnalysis complete.")
+
+
+
+
+################################################################################################
+EXAMPLE USAGE
+################################################################################################
+
+WORKFLOWS_DIRECTORY_IN = "WHERE WORKFLOWS ARE BEING READ FROM"
+TARGET_FIELD_NAMES = "FOR SOURCE OF TRUTH VALUE"
+SOT_KEY = "KEY NAME FOR SOURCE OF TRUTH"
+OUTPUT_FILENAME = "FILE NAME OUTPUT"
+
+if __name__ == '__main__':
+
+    print("\n===== SCENARIO 1: Full Analysis with SoT, Output B with target fields =====")
+    analyze_alteryx_ecosystem_merged(
+        input_directory=WORKFLOWS_DIRECTORY_IN,
+        sot_filename_key=SOT_KEY,
+        output_b_target_fields_csv=TARGET_FIELD_NAMES,
+        output_b_csv_filename=f"{OUTPUT_FILENAME}.csv"
+    )
+
